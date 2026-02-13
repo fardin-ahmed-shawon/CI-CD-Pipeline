@@ -24,16 +24,12 @@ jobs:
               --ignore-failed-read \
               -czf "$RELEASE" .
 
-      - name: Setup SSH key
-        env:
-          SSH_KEY: ${{ secrets.SSH_KEY }}
-          SSH_KNOWN_HOSTS: ${{ secrets.SSH_KNOWN_HOSTS }}
+      - name: Setup SSH
         run: |
-          echo "$SSH_KEY" > key.pem
-          chmod 600 key.pem
           mkdir -p ~/.ssh
-          echo "$SSH_KNOWN_HOSTS" >> ~/.ssh/known_hosts
-          chmod 600 ~/.ssh/known_hosts
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ secrets.SSH_KNOWN_HOSTS }}" >> ~/.ssh/known_hosts
 
       - name: Upload release to server
         env:
