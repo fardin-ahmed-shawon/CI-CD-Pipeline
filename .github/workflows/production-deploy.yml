@@ -2,7 +2,7 @@ name: Deploy PHP Website to VPS (Production)
 
 on:
   push:
-    branches: ["staging"]
+    branches: ["production"]
 
 jobs:
   deploy:
@@ -21,16 +21,16 @@ jobs:
           script: |
             set -e
 
-            PROJECT_DIR="/var/www/ci-cd-test/staging/CI-CD-Pipeline"
+            PROJECT_DIR="/var/www/ci-cd-test/production/CI-CD-Pipeline"
 
             echo "Moving to project directory"
             cd $PROJECT_DIR
 
             echo "Fetch latest code from GitHub"
-            git fetch origin staging
+            git fetch origin production
 
             echo "Resetting local repo to match GitHub (force clean deploy)"
-            git reset --hard origin/staging
+            git reset --hard origin/production
             git clean -fd
 
             echo "Setting correct permissions"
