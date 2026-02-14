@@ -23,19 +23,19 @@ jobs:
 
             PROJECT_DIR="/var/www/ci-cd-test/prod/CI-CD-Pipeline"
 
-            echo "➡️ Moving to project directory"
+            echo "Moving to project directory"
             cd $PROJECT_DIR
 
-            echo "➡️ Fetch latest code from GitHub"
+            echo "Fetch latest code from GitHub"
             git fetch origin test
 
-            echo "➡️ Resetting local repo to match GitHub (force clean deploy)"
+            echo "Resetting local repo to match GitHub (force clean deploy)"
             git reset --hard origin/test
             git clean -fd
 
-            echo "➡️ Setting correct permissions"
+            echo "Setting correct permissions"
             sudo chown -R www-data:www-data $PROJECT_DIR
             sudo find $PROJECT_DIR -type d -exec chmod 755 {} \;
             sudo find $PROJECT_DIR -type f -exec chmod 644 {} \;
 
-            echo "✅ Deployment completed successfully"
+            echo "Deployment completed successfully"
