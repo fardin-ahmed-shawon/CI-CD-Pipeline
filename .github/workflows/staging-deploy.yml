@@ -2,7 +2,7 @@ name: Deploy PHP Website to VPS (Production)
 
 on:
   push:
-    branches: ["test"]
+    branches: ["staging"]
 
 jobs:
   deploy:
@@ -27,10 +27,10 @@ jobs:
             cd $PROJECT_DIR
 
             echo "Fetch latest code from GitHub"
-            git fetch origin test
+            git fetch origin staging
 
             echo "Resetting local repo to match GitHub (force clean deploy)"
-            git reset --hard origin/test
+            git reset --hard origin/staging
             git clean -fd
 
             echo "Setting correct permissions"
