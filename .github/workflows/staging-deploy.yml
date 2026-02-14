@@ -1,4 +1,4 @@
-name: Deploy PHP Website to VPS (Production)
+name: Deploy PHP Website to VPS (Staging)
 
 on:
   push:
