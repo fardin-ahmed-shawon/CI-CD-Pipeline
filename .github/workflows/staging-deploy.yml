@@ -21,7 +21,7 @@ jobs:
           script: |
             set -e
 
-            PROJECT_DIR="/var/www/ci-cd-test/prod/CI-CD-Pipeline"
+            PROJECT_DIR="/var/www/ci-cd-test/staging/CI-CD-Pipeline"
 
             echo "Moving to project directory"
             cd $PROJECT_DIR
