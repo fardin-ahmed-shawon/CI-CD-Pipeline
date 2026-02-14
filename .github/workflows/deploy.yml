@@ -22,7 +22,7 @@ jobs:
             cd /var/www/ci-cd-test/prod/CI-CD-Pipeline/
 
             # Pull latest code
-            git pull origin master
+            git pull origin test
 
             # Set correct permissions
             sudo chown -R www-data:www-data /var/www/ci-cd-test/prod/CI-CD-Pipeline/
