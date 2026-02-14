@@ -27,6 +27,3 @@ jobs:
             # Set correct permissions
             sudo chown -R www-data:www-data /var/www/ci-cd-test/prod/CI-CD-Pipeline/
             sudo chmod -R 755 /var/www/ci-cd-test/prod/CI-CD-Pipeline/
-
-            # Reload Apache instead of Nginx
-            sudo systemctl reload apache2
