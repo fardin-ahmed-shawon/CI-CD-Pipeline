@@ -1,2 +1,2 @@
 <?php
- echo "contact us page";
+ echo "contact us pag e";
